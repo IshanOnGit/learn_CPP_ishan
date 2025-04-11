@@ -17,6 +17,6 @@ class student{
 int main()
 {
     student obj1;
-  
+    //cout<<"Helllo"<<endl;
     return 0;
 }
