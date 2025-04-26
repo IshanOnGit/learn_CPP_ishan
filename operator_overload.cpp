@@ -1,45 +1,45 @@
 #include <iostream>
 using namespace std;
-class MinusOverload {
+
+class Counter {
 private:
-    int a;
-    int b;
+    int value;
 
 public:
-    void Distance()
-    {
-        a = 0;
-        b = 0;
+    Counter() {
+        value = 0;
     }
 
-    MinusOverload(int f, int i) //Parameterized Constructor
-    {
-        int c;
-        a = f;
-        b = i;
-        c = a - b;
-        cout << "\nC:" << c;
+    // Overload prefix ++ operator (no pointer or reference)
+    Counter operator++() {
+        Counter temp;
+        temp.value = value + 1;
+        return temp;
     }
 
-    void display()
-    {
-        cout << "A: " << a << " B:" << b << endl;
+    void display() {
+        cout << "Value: " << value << endl;
     }
 
-    MinusOverload operator-()
-    {
-        a = -a;
-        b = -b;
-        return MinusOverload(a, b);
+    // Helper to assign new object (so value updates)
+    void setValue(int v) {
+        value = v;
+    }
+
+    int getValue() {
+        return value;
     }
 };
 
-int main()
-{
-    MinusOverload M1(6, 8), M2(-3, -4);
-    -M1;
-    M1.display();
-    -M2;
-    M2.display();
+int main() {
+    Counter c;
+    c.display(); // Value: 0
+
+    c = ++c;     // Calls overloaded ++
+    c.display(); // Value: 1
+
+    c = ++c;
+    c.display(); // Value: 2
+
     return 0;
 }
