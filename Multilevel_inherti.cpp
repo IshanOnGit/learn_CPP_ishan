@@ -25,9 +25,9 @@ int main(){
     Volkswagen v1;
     BMW b1;
     RR r1;
-    r1.display();
+    r1.display(); //from Volkswagen 
     
-    r1.BMW_display();
-    r1.RR_display();
+    r1.BMW_display(); //from BMW
+    r1.RR_display(); //from RR
     return 0;
 }
