@@ -4,7 +4,7 @@ class student{
     public:
     int roll_num;
     string name;
-//Default Constructor
+//Parameterized constructor 
     student(int a){
         cout<<a<<endl;
         cout<<"Parameterized Constructor invoked"<<endl;
